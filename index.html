@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>حفل زفاف عبد الناصر و غادة</title>
+
+<meta property="og:title" content="حفل زفاف عبد الناصر و غادة">
+<meta property="og:description" content="يسعدنا مشاركتكم هذه الفرحة">
+<meta property="og:image" content="https://wedding-rayan-bayan.invitinitn.workers.dev/assets/preview-image.jpg">
+<meta property="og:url" content="https://wedding-rayan-bayan.invitinitn.workers.dev/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="حفل زفاف عبد الناصر و غادة">
+<meta name="twitter:description" content="يسعدنا مشاركتكم هذه الفرحة">
+<meta name="twitter:image" content="https://wedding-rayan-bayan.invitinitn.workers.dev/assets/preview-image.jpg">
+
+<!-- Facebook App ID (optional) -->
+<meta property="fb:app_id" content="123456789">
+
+<!-- Image dimensions -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+
+<!-- Site name -->
+<meta property="og:site_name" content="حفل زفاف خالد و خولة">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Aref+Ruqaa:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="mySong" src="assets/song.mp3" loop autoplay controls style="display:none;"></audio>
+
+<!-- ══════════════════════════════════════════════
+     ENVELOPE SECTION
+══════════════════════════════════════════════ -->
+<div id="envelope-section">
+  <div id="env-loader">
+    <div class="loader-content" style="text-align:center;">
+      <div class="env-loader-ring"></div>
+      <div class="env-loader-text">الدعوة قيد التحضير</div>
+    </div>
+  </div>
+
+  <div class="invitation" id="invitation">
+    <!-- Card that reveals on open — contains full wedding content -->
+    <div class="env-card">
+      <div id="wedding-content">
+
+        <!-- ── INTRO ── -->
+        <section class="w-section" id="intro">
+          <div class="video-fallback"></div>
+          <div id="bg-image"></div>
+          <div class="petals-layer" id="petals"></div>
+          <div class="intro-overlay">
+            <div class="basmala">بارك الله لهما وبارك عليهما وجمع بينهما في الخير</div>
+            <p class="p1-invite-text">تتشرف عائلتا</p>
+            <div class="families-row">
+              <div class="family-block">
+                <div class="family-label">السيد</div><div class="family-name">
+                أحمد الصالح نصيري</div>
+              </div>
+              <div class="and-symbol">و</div>
+              <div class="family-block">
+                <div class="family-label">السيد</div><div
+                class="family-name">عبد العزيز بن عمر</div>
+              </div>
+            </div>
+            <p class="p1-invite-text" style="margin:10px 0 4px;">بدعوتكم لحضور حفل زفاف <br> نجليهما</p>
+            <div class="names-main">
+              <span class="groom-name">عبد الناصر</span>
+              <span class="names-divider">و</span>
+              <span class="bride-name">غادة</span>
+            </div>
+            <div class="shimmer-line"></div>
+          </div>
+          <div class="scroll-hint"><span>اسحب للأسفل</span><div class="scroll-arrow"></div></div>
+        </section>
+
+        <!-- ── COUNTDOWN ── -->
+        <section class="w-section" id="countdown-section">
+          <div id="countdown-bg-image"></div>
+          <div class="countdown-content">
+            <div class="section-title">العد التنازلي</div>
+            <div class="section-subtitle">لحظات تفصلنا عن اللقاء</div>
+            <div class="countdown-grid">
+              <div class="cd-unit"><div class="cd-box"><span class="cd-number" id="cd-secs">00</span></div><span class="cd-label">ثانية</span></div>
+              <div class="cd-unit"><div class="cd-box"><span class="cd-number" id="cd-mins">00</span></div><span class="cd-label">دقيقة</span></div>
+              <div class="cd-unit"><div class="cd-box"><span class="cd-number" id="cd-hours">00</span></div><span class="cd-label">ساعة</span></div>
+              <div class="cd-unit"><div class="cd-box"><span class="cd-number" id="cd-days">00</span></div><span class="cd-label">يوم</span></div>
+            </div>
+            <div style="width:100%;display:flex;justify-content:center;margin-top:8px;">
+              <div class="heart-clock-container">
+                <svg class="heart-svg" id="heartClockSvg" viewBox="0 0 260 245" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:2;">
+                  <path d="M130,218 C130,218 28,155 28,82 C28,50 54,26 82,26 C101,26 118,36 130,50 C142,36 159,26 178,26 C206,26 232,50 232,82 C232,155 130,218 130,218 Z" fill="rgba(253,232,238,0)"/>
+                  <g id="hcTicks" stroke="#9a6040" stroke-linecap="round"></g>
+                  <g id="hcDots"></g>
+                  <line id="hcMHand" x1="130" y1="122" x2="130" y2="74" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
+                  <line id="hcHHand" x1="130" y1="122" x2="130" y2="90" stroke="#7a4a2a" stroke-width="5" stroke-linecap="round"/>
+                  <line id="hcSHand" x1="130" y1="132" x2="130" y2="66" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="130" cy="122" r="6" fill="#7a4a2a"/>
+                  <circle cx="130" cy="122" r="2.8" fill="rgba(255,250,240,0.90)"/>
+                </svg>
+              </div>
+            </div>
+            <div class="cd-section-petals" id="cdPetals"></div>
+            <div class="scroll-hint-2"><span>اسحب للأسفل</span><div class="scroll-arrow-2"></div></div>
+          </div>
+        </section>
+
+        <!-- ── PROGRAMME ── -->
+        <section class="w-section" id="program-section">
+          <div class="program-bg"><img src="" alt="" id="programBgImg"></div>
+          <div class="program-content">
+            <div class="program-header">
+              <div class="program-title-script">برنامج الحفل</div>
+              
+              <div class="program-ornament"></div>
+            </div>
+            <div class="timeline" id="timeline">
+        <div class="timeline-item"
+            data-location="فندق ديسكفري ,عبن دراهم" data-lat="36.7676205"
+            data-lng="8.6875559">
+      <div class="tl-left-cell"><span class="tl-date">17 / 7 / 2026</span><div
+      class="tl-event">الوطية</div><div class="tl-location">فضاء ديسكفري</div><div
+      class="tl-time">19:30 </div><button class="tl-location-btn"
+      onclick="openMap(this, 'https://maps.app.goo.gl/dtW6eigVSjJXdMBcA')"><img src="assets/localisation_icon.webp"
+      class="loc-icon" alt="icon"><span>الموقع</span></button></div>
+      <div class="tl-dot-wrapper"><div class="tl-dot"></div></div>
+      <div class="tl-right-cell"><img src="assets/icon1.png" class="tl-icon" alt="" style="object-fit:contain;"></div>
+    </div>
+    <div class="timeline-item" data-location="قاعة الاتحاد ,سيدي بوزيد" data-lat="35.03830991547622," data-lng="9.484588210208715">
+      <div class="tl-left-cell"><img src="assets/icon4.png" class="tl-icon" alt="" style="object-fit:contain;margin-right:0;margin-left:auto;"></div>
+      <div class="tl-dot-wrapper"><div class="tl-dot"></div></div>
+      <div class="tl-right-cell"><span class="tl-date">19 / 7 / 2026</span><div
+      class="tl-event">مأدبة العشاء</div><div class="tl-location">قاعة
+     الاتحاد </div><div class="tl-time">19:00 </div><button class="tl-location-btn"
+      onclick="openMap(this,'https://maps.app.goo.gl/6z9439VttexePF5x6')"><img src="assets/localisation_icon.webp"
+      class="loc-icon" alt="icon"><span>الموقع</span></button></div>
+    </div>
+
+<div class="timeline-item" data-location="فضاء أوتار ,تونس" data-lat="36.85681257437877" data-lng="10.154474241479674">
+      <div class="tl-left-cell"><span class="tl-date">21 / 7 / 2026</span><div
+      class="tl-event">حفل الأفراح</div><div class="tl-location">فضاء
+      أوتار</div><div class="tl-time">20:00 </div><button
+      class="tl-location-btn" onclick="openMap(this, 'https://maps.app.goo.gl/zesvyFfQ8S5ivayUA')"><img
+      src="assets/localisation_icon.webp" class="loc-icon"
+      alt="icon"><span>الموقع</span></button></div>
+      <div class="tl-dot-wrapper"><div class="tl-dot"></div></div>
+      <div class="tl-right-cell"><img src="assets/icon5.png" class="tl-icon" alt="" style="object-fit:contain;"></div>
+    </div></div>
+          </div>
+        </section>
+
+        <!-- ── CLOSING ── -->
+        <section id="closing-section">
+          <div class="closing-shimmer" style="width:100px;"></div>
+          <div class="closing-names">عبد الناصر و غادة</div>
+          <div class="closing-tagline">يسعدنا مشاركتكم هذه الفرحة</div>
+          <img src="assets/icon6.png" alt="" style="width:clamp(80px,28vw,120px);height:auto;object-fit:contain;margin-top:8px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.25));">
+          <div class="closing-shimmer" style="width:100px;margin-top:10px;"></div>
+        </section>
+
+      </div><!-- /wedding-content -->
+    </div><!-- /env-card -->
+
+    <!-- envelope panels & seal -->
+    <img id="leftPanel"  class="left-panel"  alt="">
+    <img id="rightPanel" class="right-panel" alt="">
+    <div class="gold-circle" id="goldCircle" style="display:none;"></div>
+    
+    <img id="seal" class="seal" alt="">
+    <div class="seal-text" id="sealText" >
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <path id="circlePath" d="M100,100 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/>
+        </defs>
+        <text direction="rtl" text-anchor="middle">
+  <textPath href="#circlePath" startOffset="50%" textLength="135" lengthAdjust="spacingAndGlyphs">اضغط لفتح الدعوة</textPath>
+</text>
+      </svg>
+    </div>
+  </div><!-- /invitation -->
+</div><!-- /envelope-section -->
+
+<!-- MAP MODAL -->
+<div id="map-modal">
+  <div class="map-backdrop" onclick="closeMap()"></div>
+  <div class="map-sheet">
+    <button class="map-close-btn" onclick="closeMap()">✕</button>
+    <div class="map-sheet-handle"></div>
+    <div class="map-sheet-title" id="modal-event-title">الموقع</div>
+    <div class="map-sheet-address" id="modal-address"></div>
+    <div id="leaflet-map" style="display:none;"></div>
+    <div id="map-no-coords" class="map-no-coords" style="display:none;"><div class="pin">📍</div><p>أضف الإحداثيات لعرض الخريطة</p></div>
+    <button class="open-maps-btn" id="open-maps-btn" onclick="openInMaps()">افتح في خرائط جوجل</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+      const song = document.getElementById("mySong");
+
+    // Dès le premier clic sur la page, le son s'active
+    document.addEventListener('click', function() {
+        song.muted = false;
+        song.play(); // Relance au cas où le navigateur aurait totalement bloqué
+    }, { once: true });
+
+// ══ ENVELOPE LOGIC ══
+(function(){
+  var inv=document.getElementById('invitation');
+  var loader=document.getElementById('env-loader');
+  var lp=document.getElementById('leftPanel');
+  var rp=document.getElementById('rightPanel');
+  var sl=document.getElementById('seal');
+  lp.src='assets/left.jpg ';
+  rp.src='assets/right.jpg';
+  sl.src='assets/seal.webp';
+  var loaded=0,total=3;
+  function done(){loaded++;if(loaded>=total){setTimeout(function(){loader.style.opacity='0';setTimeout(function(){loader.style.display='none';inv.classList.add('loaded');},600);},400);}}
+  [lp,rp,sl].forEach(function(img){img.onload=done;img.onerror=done;});
+  sl.addEventListener('click',function(){
+    inv.classList.add('open');
+    // after panels swing away, start wedding scroll
+    setTimeout(function(){
+      var wc=document.getElementById('wedding-content');
+      if(wc){wc.style.opacity='1';}
+    },800);
+  });
+})();
+
+// ══ PAGE 1 PETALS ══
+(function(){
+  var colors=['#e8cc7a','#f5e6c0','#c9a84c','#fff8d0','#d4a960','#f5dca0'];
+  var layer=document.getElementById('petals');
+  for(var i=0;i<18;i++){
+    var p=document.createElement('div');p.className='petal';
+    var size=Math.random()*7+5;
+    p.style.cssText='width:'+size+'px;height:'+(size*1.5)+'px;left:'+(Math.random()*100)+'%;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-duration:'+(Math.random()*8+7)+'s;animation-delay:'+(Math.random()*10)+'s;border-radius:'+(Math.random()*40+30)+'% 0 '+(Math.random()*40+30)+'% 0;opacity:0;';
+    layer.appendChild(p);
+  }
+})();
+
+// ══ HEART CLOCK ══
+(function(){
+  var cx=130,cy=122,r=64;
+  var tg=document.getElementById('hcTicks'),hg=document.getElementById('hcDots');
+  if(!tg||!hg)return;
+  for(var i=0;i<60;i++){
+    var ang=(i/60)*2*Math.PI-Math.PI/2,isH=i%5===0,r1=isH?r-11:r-6;
+    var x1=cx+r*Math.cos(ang),y1=cy+r*Math.sin(ang),x2=cx+r1*Math.cos(ang),y2=cy+r1*Math.sin(ang);
+    var ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+    ln.setAttribute('x1',x1.toFixed(2));ln.setAttribute('y1',y1.toFixed(2));ln.setAttribute('x2',x2.toFixed(2));ln.setAttribute('y2',y2.toFixed(2));
+    ln.setAttribute('stroke-width',isH?'2.2':'1');ln.setAttribute('opacity',isH?'1':'0.4');tg.appendChild(ln);
+  }
+  for(var j=0;j<12;j++){
+    var ang2=(j/12)*2*Math.PI-Math.PI/2,rd=r-20;
+    var dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx',(cx+rd*Math.cos(ang2)).toFixed(2));dot.setAttribute('cy',(cy+rd*Math.sin(ang2)).toFixed(2));
+    dot.setAttribute('r','2.8');dot.setAttribute('fill','#c9a84c');hg.appendChild(dot);
+  }
+  function rot(id,deg){var el=document.getElementById(id);if(el)el.setAttribute('transform','rotate('+deg+' '+cx+' '+cy+')');}
+  function live(){var now=new Date(),ms=now.getMilliseconds(),s=now.getSeconds()+ms/1000,m=now.getMinutes()+s/60,h=now.getHours()%12+m/60;rot('hcSHand',s*6);rot('hcMHand',m*6);rot('hcHHand',h*30);}
+  var anim=false;
+  function entry(){if(anim)return;anim=true;var now=new Date(),ms=now.getMilliseconds(),s=now.getSeconds()+ms/1000,m=now.getMinutes()+s/60,h=now.getHours()%12+m/60;var tS=s*6,tM=m*6,tH=h*30,dur=1800,t0=performance.now();(function step(ts){var pr=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-pr,3);rot('hcSHand',e*tS);rot('hcMHand',e*tM);rot('hcHHand',e*tH);if(pr<1)requestAnimationFrame(step);else setInterval(live,50);})(t0);}
+  var sec=document.getElementById('countdown-section');
+  if(!sec){setInterval(live,50);return;}
+  new IntersectionObserver(function(es){if(es[0].isIntersecting)entry();},{threshold:0.3}).observe(sec);
+})();
+
+// ══ PAGE 2 PETALS ══
+(function(){
+  var colors=['#c9a84c','#e8cc7a','#f5e6c0','#d4a96a','#fff8ee'];
+  var c=document.getElementById('cdPetals');if(!c)return;var s=false;
+  new IntersectionObserver(function(es){
+    if(es[0].isIntersecting&&!s){s=true;
+      for(var i=0;i<24;i++){
+        var p=document.createElement('div');p.className='cd-petal';var sz=6+Math.random()*9;
+        p.style.cssText='width:'+sz+'px;height:'+(sz*1.5)+'px;left:'+(Math.random()*100)+'%;top:-5%;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-duration:'+(6+Math.random()*8)+'s;animation-delay:'+(Math.random()*8)+'s;border-radius:'+(40+Math.random()*30)+'% 0 '+(40+Math.random()*30)+'% 0;';
+        c.appendChild(p);
+      }
+    }
+  },{threshold:0.1}).observe(document.getElementById('countdown-section'));
+})();
+
+// ══ COUNTDOWN TIMER ══
+(function(){
+  var wd=new Date('2026-07-21T20:00:00');
+  var els={d:document.getElementById('cd-days'),h:document.getElementById('cd-hours'),m:document.getElementById('cd-mins'),s:document.getElementById('cd-secs')};
+  function pad(n){return String(n).padStart(2,'0');}
+  function flip(el,val){var nv=pad(val);if(el.textContent!==nv){el.classList.remove('flip');void el.offsetWidth;el.classList.add('flip');el.textContent=nv;}}
+  function tick(){var diff=Math.max(0,wd.getTime()-Date.now());var d=Math.floor(diff/86400000);diff-=d*86400000;var h=Math.floor(diff/3600000);diff-=h*3600000;var m=Math.floor(diff/60000);diff-=m*60000;var s=Math.floor(diff/1000);flip(els.d,d);flip(els.h,h);flip(els.m,m);flip(els.s,s);}
+  tick();setInterval(tick,1000);
+})();
+
+// ══ TIMELINE REVEAL ══
+(function(){
+  var items=document.querySelectorAll('.timeline-item');
+  items.forEach(function(item){new IntersectionObserver(function(es){if(es[0].isIntersecting)es[0].target.classList.add('visible');},{threshold:0.18}).observe(item);});
+})();
+
+// ══ LEAFLET MAP ══
+var leafMap=null,leafMarker=null,currentLat=null,currentLng=null,currentLink=null;
+function openMap(btn, link = null){
+  var item=btn.closest('.timeline-item');var addr=item.dataset.location||'';var lat=item.dataset.lat;var lng=item.dataset.lng;
+  var eventName=item.querySelector('.tl-event').textContent;
+  currentLink = link;
+  currentLat=lat?parseFloat(lat):null;currentLng=lng?parseFloat(lng):null;
+  document.getElementById('modal-event-title').textContent=eventName;document.getElementById('modal-address').textContent=addr;
+  document.getElementById('map-modal').classList.add('open');document.body.style.overflow='hidden';
+  var mapEl=document.getElementById('leaflet-map'),noEl=document.getElementById('map-no-coords'),btn2=document.getElementById('open-maps-btn');
+  if(!currentLat||!currentLng){mapEl.style.display='none';noEl.style.display='flex';btn2.style.display='none';return;}
+  noEl.style.display='none';mapEl.style.display='block';btn2.style.display='block';
+  setTimeout(function(){
+    if(!leafMap){leafMap=L.map('leaflet-map',{zoomControl:true,scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap',maxZoom:19}).addTo(leafMap);}
+    leafMap.setView([currentLat,currentLng],17);if(leafMarker)leafMap.removeLayer(leafMarker);
+    var icon=L.divIcon({html:'<div style="font-size:32px;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.5));">📍</div>',className:'',iconSize:[32,32],iconAnchor:[16,32]});
+    leafMarker=L.marker([currentLat,currentLng],{icon}).addTo(leafMap);
+    leafMarker.bindPopup('<strong>'+eventName+'</strong><br><small>'+addr+'</small>').openPopup();
+    leafMap.invalidateSize();
+  },120);
+}
+function closeMap(){document.getElementById('map-modal').classList.remove('open');document.body.style.overflow='';}
+function openInMaps(){if(currentLat&&currentLng && currentLink)window.open(currentLink,'_blank');}
+(function(){var sh=document.querySelector('.map-sheet');var sy=0;sh.addEventListener('touchstart',function(e){sy=e.touches[0].clientY;},{passive:true});sh.addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-sy>80)closeMap();},{passive:true});})();
+
+// ══ PROGRAM SECTION HEIGHT FIT ══
+(function(){
+  function fit(){var sec=document.getElementById('program-section'),cont=sec&&sec.querySelector('.program-content'),bg=document.getElementById('programBgImg');if(!sec||!cont||!bg)return;var h=Math.max(cont.scrollHeight+120, document.getElementById('envelope-section').clientHeight);sec.style.minHeight=h+'px';bg.style.height=h+'px';}
+  window.addEventListener('load',fit);window.addEventListener('resize',fit);setTimeout(fit,400);
+})();
+
+// ══ BACKGROUND IMAGES ══
+(function(){
+  function tryImg(url,onOk){var i=new Image();i.onload=function(){onOk(url);};i.onerror=function(){if(url.match(/\.png$/i))tryImg(url.replace(/\.png$/i,'.jpg'),onOk);};i.src=url;}
+  tryImg('assets/image15_bg.jpg',function(u){var el=document.getElementById('bg-image');if(el)el.style.backgroundImage="url('"+u+"')";});
+  tryImg('assets/image7_bg.png',function(u){var el=document.getElementById('countdown-bg-image');if(el)el.style.backgroundImage="url('"+u+"')";});
+  var bg=document.getElementById('programBgImg');
+  if(bg){bg.onerror=function(){if(this.src.match(/\.png$/i)){var j=this.src.replace(/\.png$/i,'.jpg');this.onerror=null;this.src=j;}};bg.src='assets/image17_bg.png';}
+})();
+</script>
+</body>
+</html>
